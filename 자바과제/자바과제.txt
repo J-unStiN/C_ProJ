@@ -1,0 +1,101 @@
+17.4.10 자바과제
+
+1번
+package tg;
+import java.util.Scanner;
+
+public class Tg {
+	public static void main(String[] args){
+		Scanner obj = new Scanner(System.in);
+		
+		String value = obj.next();
+		char c = value.charAt(0);
+				
+		for(char i = 'a'; i<=c; i++){
+			for(char j = i; j<=c; j++){
+				System.out.print(j);	
+			}
+			System.out.println("");
+		}
+		obj.close();
+	}
+}
+
+2번
+
+
+
+
+3번
+package tg;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Tg {
+	public static void main(String[] args){
+		Scanner obj = new Scanner(System.in);
+		System.out.println("정수를 입력하세요");
+		int a=0;
+		
+		try
+		{
+			a = obj.nextInt();
+			if(a%2==0)
+			{
+				System.out.println("짝수입니다");
+			}
+			else if(a%2==1)
+			{
+				System.out.println("홀수입니다");
+			}
+			else if(a<0)
+			{
+				System.out.println("프로그램 종료합니다");
+				System.exit(0); 
+			}
+		}
+		catch(InputMismatchException e)
+		{
+			System.out.println("정수를 입력하지않아 프로그램이 종료됩니다..");
+			System.exit(0);
+		}
+		finally
+		{
+		obj.close();
+		}
+	}
+}
+
+
+4번
+package tg;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Tg {
+	public static void main(String[] args){
+		Scanner obj = new Scanner(System.in);
+		System.out.println("정수를 입력하세요");
+		char day[] = {'일','월','화','수','목','금','토'};
+		
+		try
+		{
+			int a = obj.nextInt();
+			if(a<0)
+			{
+				System.out.println("프로그램을 종료합니다 ");
+				System.exit(0);
+			}
+			System.out.println(day[a%day.length]);
+		}
+		
+		catch(InputMismatchException e)
+		{
+			System.out.println("정수가 아닙니다 ");
+			System.exit(0);
+		}
+		
+		
+		obj.close();
+	}
+}
